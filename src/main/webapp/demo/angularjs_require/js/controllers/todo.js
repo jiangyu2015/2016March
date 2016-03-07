@@ -12,6 +12,7 @@ define([
 ], function (angular) {
     return ['$scope', '$location', 'todoStorage', 'filterFilter',
         function ($scope, $location, todoStorage, filterFilter) {
+            console.log($scope);
             var todos = $scope.todos = todoStorage.get();
 
             $scope.newTodo = '';

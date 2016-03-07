@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="../../">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="demo/angularjs/node_modules/angular/angular.js"></script>
+</head>
+<body>
+
+<div ng-app="angularTest1" ng-cloak ng-controller="Controller">
+    <div ng-click="click();">
+        <div>
+            {{test}}
+        </div>
+    </div>
+    <hello></hello>
+</div>
+
+<script>
+    +function (window, undefined) {
+        'use strict';
+
+        var angular = window.angular;
+
+//        console.log(angular);
+
+
+        var module = angular.module('angularTest1', []);
+//        console.log(module);
+        var c = module.controller('Controller', function Controller($scope, $filter) {
+            console.log(arguments);
+            $scope.test = '1';
+            $scope.click = function () {
+                console.log('click');
+            }
+        });
+
+        var d = module.directive('hello', function () {
+            return function ($scope, element, attr) {
+                return {
+                    restrict: 'E',
+                    template: '<div>Hi there</div>',
+                    replace: true
+                };
+            }
+        });
+
+        module.factory('a', function ($scope, $injector) {
+            console.log(arguments);
+        })
+    }(window);
+</script>
+</body>
+</html>
