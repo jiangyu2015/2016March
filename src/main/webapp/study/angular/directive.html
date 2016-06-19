@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body ng-app="app1">
+
+<hello>
+    lalala
+</hello>
+
+<script id="template" type="text/ng-template">
+    <div ng-controller="Controller1">
+        {{yyy}}
+        {{xxx}}
+        <span ng-transclude></span>
+    </div>
+
+</script>
+
+<script src="../../demo/angularjs/node_modules/angular/angular.js"></script>
+<script src="../../demo/angularjs/node_modules/angular-route/angular-route.js"></script>
+
+<script>
+    +function (window, undefined) {
+
+
+        var angular = window.angular;
+
+        angular.module('app1', [])
+                .directive('hello', function ($timeout) {
+                    return {
+                        restrict: 'EC',
+                        controller: function ($scope) {
+                            $scope.xxx = 123;
+                            $scope.yyy = 321;
+                            $scope.fun = function () {
+                                console.log(1);
+                            };
+                        },
+                        templateUrl: 'template',
+                        transclude: true,
+                        replace: true,
+                        link: function ($scope, $element, attr) {
+                            $scope.yyy = 1111;
+                            $timeout(function () {
+                                $scope.xxx = 2222;
+                            }, 1000);
+
+                            $scope.fun();
+                        }
+                    }
+                })
+                .controller('Controller1', function ($scope) {
+                    $scope.yyy = 111;
+                    $scope.xxx = 222;
+
+                    $scope.fun();
+                })
+
+    }(window);
+</script>
+</body>
+</html>

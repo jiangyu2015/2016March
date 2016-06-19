@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Title</title>
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="res/swiper/css/swiper.css" rel="stylesheet">
+    <link href="index_swiper.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">
+            <a href="http://baidu.com">
+                <img src="images/swiper1.png" class="img-responsive">
+            </a>
+        </div>
+        <div class="swiper-slide">
+            <img src="images/swiper1.png">
+        </div>
+        <div class="swiper-slide">
+            <img src="images/swiper1.png">
+        </div>
+        <div class="swiper-slide">Slide 4</div>
+        <div class="swiper-slide">Slide 5</div>
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+
+<section class="container-fluid">
+    <div class="row all-category-container">
+        <!---->
+    </div>
+    <div class="row all-product-view">
+        <div class="text-center category-name-text">分类名</div>
+        <div class="all-product-container">
+            <!---->
+        </div>
+    </div>
+</section>
+
+
+<script id="categoryItemTemplate" type="text/template">
+    <div class="category-container">
+        <div class="img-container center-block">
+            <a href="<%=link%>">
+                <img src="<%=imageUrl%>" class="img-responsive img-circle">
+            </a>
+        </div>
+        <span><%=text%></span>
+    </div>
+</script>
+
+<script id="twoProductTemplate" type="text/template">
+    <div class="tow-product">
+        <div class="product-content1">
+            <%=content1%>
+        </div>
+        <div class="product-gap"></div>
+        <div class="product-content2">
+            <%=content2%>
+        </div>
+    </div>
+</script>
+
+<script id="productItemTemplate" type="text/template">
+    <div class="product-item-img">
+        <a href="">
+            <img src="images/swiper1.png" class="img-responsive">
+        </a>
+    </div>
+    <div class="product-info">
+        <span class="product-name">产品名称</span>
+        <div class="clearfix">
+            <div class="pull-left">
+                <span class="price">¥199.00</span>
+            </div>
+            <div class="pull-right">
+                <span class="detail-description">详细描述</span>
+            </div>
+        </div>
+    </div>
+</script>
+
+<script src="js/jquery.js"></script>
+<script src="js/underscore.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="res/swiper/js/swiper.jquery.js"></script>
+
+<script src="index_swiper.js"></script>
+
+
+</body>
+</html>

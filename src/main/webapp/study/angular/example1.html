@@ -37,13 +37,11 @@
         });
 
         var d = module.directive('hello', function () {
-            return function ($scope, element, attr) {
-                return {
-                    restrict: 'E',
-                    template: '<div>Hi there</div>',
-                    replace: true
-                };
-            }
+            return {
+                restrict: 'E',
+                template: '<div>Hi there</div>',
+                replace: true
+            };
         });
 
         module.factory('a', function ($scope, $injector) {
